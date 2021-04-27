@@ -11,8 +11,7 @@ inflection==0.5.1
 itsdangerous==1.1.0
 joblib==1.0.1
 mccabe==0.6.1
-mkl-random==1.0.2
-mkl-service==2.3.0
+
 numpy==1.20.2
 olefile==0.46
 parso==0.7.0

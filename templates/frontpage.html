@@ -1,0 +1,78 @@
+<html>
+<head>
+<style>
+body {
+ 
+   background-image: url('/static/img/m4.jpg');
+  background-repeat: no-repeat;
+  color: brown;
+  background-size: cover ;
+  text-color:blue;
+  
+  
+  
+   
+}
+button[type="submit"]{
+	height:60;
+	width:120;
+}
+input[type="radio"] {
+	height:15px; 
+	width:15px;
+}
+</style>
+</head>
+
+<body>
+<center>
+
+<h1 align='center' >Heart Disease Prediction</h1>
+<form  action="{{url_for('predict')}}" method="POST">
+<h3>
+Age
+<input type="text" name="Age" placeholder="Age" required="required"/>
+&emsp;&emsp;anaemia&emsp;
+ <input type="radio" id="Yes" name="anaemia" value=1 required="required"><label for="anaemia">Yes</label>
+<input type="radio" id="No" name="anaemia" value=0 required="required"><label for="anaemia">No</label>
+<br></br>
+Creatinine
+<input type="text" name="creatinine" placeholder="creatinine" required="required"/>
+
+ &emsp;&emsp;diabetes&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <input type="radio" id="Yes" name="diabetes" value=1 required="required"><label for="diabetes">Yes</label>
+<input type="radio" id="No" name="diabetes" value=0 required="required"><label for="diabetes">No</label>
+<br><br>
+Ejection_Fraction
+<input type="text" name="ejection_fraction" placeholder="ejection_fraction" required="required"/>
+
+&emsp;&emsp;high_blood_pressure &emsp;
+ <input type="radio" id="Yes" name="high_blood_pressure" value=1 required="required"><label for="high_blood_pressure">Yes</label>
+<input type="radio" id="No" name="high_blood_pressure" value=0 required="required"><label for="high_blood_pressure">No</label>
+<br><br>
+Platelets
+<input type="text" name="platelets" placeholder="platelets" required="required"/>
+&emsp;&emsp;sex&emsp;&emsp;&nbsp;&nbsp;
+ <input type="radio" id="Yes" name="Male" value=1 required="required"><label for="sex">Yes</label>
+<input type="radio" id="No" name="Female" value=0 required="required"><label for="sex">No</label>
+<br><br>
+Serum_Creatinine
+<input type="text" name="serum_creatinine" placeholder="serum_creatinine" required="required"/>
+
+ &emsp;&emsp;Smoking &emsp;&emsp;&emsp;
+ <input type="radio" id="Yes" name="smoking" value=1 required="required"><label for="smoking">Yes</label>
+<input type="radio" id="No" name="smoking" value=0 required="required"><label for="smoking">No</label>
+<br><br>
+Serum_Sodium
+<input type="text" name="serum_sodium" placeholder="serum_sodium" required="required"/>
+</br>
+<br>
+Time
+<input type="text" name="time" placeholder="time" required="required"/></br>
+
+
+<b><h1><button type="submit"><b>predict</b></button></h1>
+</form>
+<h3 style="color:brown;">&emsp;{{prediction_text}}<h3>
+</body>
+</html>

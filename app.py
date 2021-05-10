@@ -33,9 +33,9 @@ def predict():
     
     output = prediction[0]
     if(output==1):
-        return render_template('frontpage.html',prediction_text='You have risk of having diabetes,Take care your health')
+        return render_template('https://github.com/Mano181/HeartDisease/blob/main/templates/negative.html')
     else:
-        return render_template('frontpage.html',prediction_text='There is no risk of having risk diabetes,maintain your health')
+        return render_template('https://github.com/Mano181/HeartDisease/blob/main/templates/positive.html')
     #return render_template('index.html',prediction_text='Employee Salary should be $ {}'.format(output))
 
 if __name__=="__main__":

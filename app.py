@@ -12,11 +12,11 @@ import pickle
 app = Flask(__name__)
 model=pickle.load(open('model.pkl','rb'))
 
-@app.route('/',methods=['POST'])
+@app.route('/',methods=[' GET'])
 def home():
     return render_template('frontpage.html')
 
-@app.route('/predict',methods=['POST'])
+@app.route('/predict',methods=['GET'])
 def predict():
     '''
     For rendering results on HTML GUI

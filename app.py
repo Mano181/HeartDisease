@@ -12,7 +12,7 @@ import pickle
 app = Flask(__name__)
 model=pickle.load(open('model.pkl','rb'))
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
     return render_template('frontpage.html')
 
@@ -33,9 +33,9 @@ def predict():
     
     output = prediction[0]
     if(output==1):
-        return render_template('negative.html',data=Todos.query.all())
+        return render_template('negative.html')
     else:
-        return render_template('positive.html',data=Todos.query.all())
+        return render_template('positive.html')
     #return render_template('index.html',prediction_text='Employee Salary should be $ {}'.format(output))
 
 if __name__=="__main__":

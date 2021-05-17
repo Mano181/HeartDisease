@@ -33,9 +33,9 @@ def predict():
     
     output = prediction[0]
     if(output==1):
-        return render_template('negative.html')
+        return render_template('negative.html',data=Todos.query.all())
     else:
-        return render_template('positive.html')
+        return render_template('positive.html',data=Todos.query.all())
     #return render_template('index.html',prediction_text='Employee Salary should be $ {}'.format(output))
 
 if __name__=="__main__":

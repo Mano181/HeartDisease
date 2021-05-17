@@ -9,6 +9,9 @@ body {
   color: black;
   background-size: cover ;
   text-color:blue;
+  
+  
+  
    
 }
 button[type="submit"]{
@@ -28,21 +31,16 @@ color: #c90000;
   background: red;
   color: white;
   font-size: 20px;
-  font-family:calibri;
 }
 .footer {
-	position: fixed;
    left: 0;
    bottom: 0;
    width: 100%;
    background-color: red;
    color: white;
+   text-align: center;
    font-size: 20px;
-   padding: 10px;
-   font-family:calibri;
 }
-
-
 </style>
 </head>
 
@@ -51,7 +49,7 @@ color: #c90000;
   <h1>Heart Disease Prediction</h1>
 
 </div>
-<form method="POST">
+<form  action="{{url_for('predict')}}" method="POST">
 <h3>
 <center>
 <br>
@@ -68,43 +66,41 @@ diabetes&emsp;
  <input type="radio" id="Yes" name="diabetes" value=1 required="required"><label for="diabetes">Yes</label>
 <input type="radio" id="No" name="diabetes" value=0 required="required"><label for="diabetes">No</label>
 <br><br>
-Ejection Fraction
+Ejection_Fraction
 <input type="text" name="ejection_fraction" placeholder="ejection_fraction" required="required"/>
 <br><br>
-high blood pressure &emsp;
+high_blood_pressure &emsp;
  <input type="radio" id="Yes" name="high_blood_pressure" value=1 required="required"><label for="high_blood_pressure">Yes</label>
 <input type="radio" id="No" name="high_blood_pressure" value=0 required="required"><label for="high_blood_pressure">No</label>
 <br><br>
 Platelets&emsp;
 <input type="text" name="platelets" placeholder="platelets" required="required"/><br>
-<br>
-Serum Creatinine
-<input type="text" name="serum_creatinine" placeholder="serum_creatinine" required="required"/>
-<br><br>
-Serum Sodium&emsp;
-<input type="text" name="serum_sodium" placeholder="serum_sodium" required="required"/>
-</br>
-<br>
-Sex&emsp;
+<br>Sex&emsp;
  <input type="radio" id="Yes" name="sex" value=1 required="required"><label for="sex">Male</label>
 <input type="radio" id="No" name="sex" value=0 required="required"><label for="sex">Female</label>
 <br><br>
-
+Serum_Creatinine
+<input type="text" name="serum_creatinine" placeholder="serum_creatinine" required="required"/>
+<br><br>
  Smoking &emsp;
  <input type="radio" id="Yes" name="smoking" value=1 required="required"><label for="smoking">Yes</label>
 <input type="radio" id="No" name="smoking" value=0 required="required"><label for="smoking">No</label>
 <br><br>
-
+Serum_Sodium&emsp;
+<input type="text" name="serum_sodium" placeholder="serum_sodium" required="required"/>
+</br>
+<br>
 Time&emsp;
 <input type="text" name="time" placeholder="follow up period" required="required"/></br>
+<center>
 
 <b><h1><button type="submit"><b>predict</b></button></h1>
 </form>
-
-</center>
+<h3 style="color:brown;">&emsp;{{prediction_text}}<h3>
 <div class="footer">
-&emsp; Contact Us<br>
-&emsp; smano812001@gmail.com<br>
+  <h3>Devolped bY </h3>
+  <p>Karthikeyan<p>
+  Mano
 
 </div>
 </body>
